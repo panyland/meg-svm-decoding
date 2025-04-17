@@ -1,6 +1,5 @@
-# MEG Sensory Stimuli Decoding with SVM
-Decoding sensory stimuli applied to fingers using magnetoencephalography (MEG) data and Support Vector Machines (SVMs). 
-Includes tools for processing MEG recordings, analyzing event-related responses, and classifying tactile/proprioceptive stimuli across fingers.
+# Decoding sensory stimuli applied to fingers using MEG data and SVMs. 
+Includes code for processing MEG recordings, analyzing event-related responses, and classifying tactile/proprioceptive stimuli across fingers as well as plotting results.
 
 ## svm.m
 Implements sliding-window SVM classification with permutation testing. Key features:
