@@ -137,7 +137,7 @@ ax.FontName = 'Times New Roman';
 
 %% Plot average responses
 
-time_int=[-100 500]; % valitaan aikaväli
+time_int=[-100 500]; 
 num_samples = abs(time_int(2) - time_int(1)) + 1;
 data1 = zeros(length(ii1), length(ii_meg), num_samples);
 data2 = zeros(length(ii2), length(ii_meg), num_samples);
@@ -219,21 +219,21 @@ function scrollable_erps(avg_data, gradm, time_int)
 
     % Axes setup
     ax = axes('Parent', p, 'Position', [0.05 0.1 0.9 0.85]);
-    ax.Color = 'white'; % Set axes background color
-    ax.FontSize = 12; % Set font size
-    ax.FontName = 'Times New Roman'; % Set font type
-    ax.TickDir = 'out'; % Set ticks to point outward
-    ax.TickLength = [0.005 0.025]; % Shorter ticks
-    ax.Box = 'off'; % Only show left and bottom axes
-    ax.XColor = 'k'; % X-axis color
-    ax.YColor = 'k';  % Y-axis color
+    ax.Color = 'white'; 
+    ax.FontSize = 12; 
+    ax.FontName = 'Times New Roman'; 
+    ax.TickDir = 'out'; 
+    ax.TickLength = [0.005 0.025]; 
+    ax.Box = 'off'; 
+    ax.XColor = 'k'; 
+    ax.YColor = 'k';  
 
     % Initial plot
     plot(ax, linspace(time_int(1), time_int(2), size(avg_data, 2)), avg_data(1, :));
     title(ax, sprintf('Channel %d', gradm(1)), 'FontName', 'Times New Roman', 'FontSize', 12);
     xlabel(ax, 'Time (ms)', 'FontName', 'Times New Roman', 'FontSize', 12);
     ylabel(ax, 'Amplitude (T)', 'FontName', 'Times New Roman', 'FontSize', 12);
-    grid(ax, 'off'); % Turn off grid
+    grid(ax, 'off'); 
 
 
     % Slider callback function
