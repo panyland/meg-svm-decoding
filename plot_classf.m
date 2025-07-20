@@ -3,7 +3,7 @@ clear;
 close all;
 
 % Define the base directory where the subject folders are located
-baseDir = pwd; % Assuming the current directory is the base directory
+baseDir = pwd; 
 
 % Define the subjects and conditions
 subjects = {'KH1', 'KH2', 'KH3', 'KH4', 'KH5', 'KH6', 'KH7', 'KH8', 'KH9', 'KH10'};
@@ -19,7 +19,7 @@ classfData = cell(numConditions, numPairs);
 % Loop through subjects, conditions, and finger pairs to load data
 for i = 1:numSubjects
     subject = subjects{i};
-    subjectDir = fullfile(baseDir, subject); % Directory for each subject
+    subjectDir = fullfile(baseDir, subject); 
     for j = 1:numConditions
         condition = conditions{j};
         for k = 1:numPairs
@@ -54,7 +54,7 @@ accuracyLength = length(classfData{1, 1});
 time = linspace(0, 500, accuracyLength);
 
 % Plot styles for different pairs
-plotStyles = {'-ok', '-^k', '-sk'}; % Circle, triangle, square, all in black
+plotStyles = {'-ok', '-^k', '-sk'}; 
 
 % Plot the grand average classification accuracies separately
 for j = 1:numConditions
@@ -66,18 +66,18 @@ for j = 1:numConditions
         plot(time, classfData{j, k}, plotStyles{k}, 'DisplayName', strrep(pair, '_', ' '), 'LineWidth', 1.0, 'MarkerIndices', 2:length(time)-1);
     end
     hold off;
-    set(gca, 'Color', 'w'); % Set axes background color to white
-    set(gca, 'XColor', 'k', 'YColor', 'k'); % Set tick colors to black
-    set(gca, 'TickDir', 'out'); % Ticks pointing outwards
-    set(gca, 'Box', 'off'); % Remove the upper and right edges
-    set(gca, 'FontName', 'Times New Roman'); % Set font to Times New Roman
-    set(gca, 'TickLength', [0.005 0.005]); % Set shorter tick lengths
+    set(gca, 'Color', 'w'); 
+    set(gca, 'XColor', 'k', 'YColor', 'k'); 
+    set(gca, 'TickDir', 'out'); 
+    set(gca, 'Box', 'off'); 
+    set(gca, 'FontName', 'Times New Roman'); 
+    set(gca, 'TickLength', [0.005 0.005]); 
     title(sprintf('Grand Average Classification Accuracy - %s', condition), 'Color', 'k');
     xlabel('Time (ms)', 'Color', 'k');
     ylabel('Classification accuracy (%)', 'Color', 'k');
     xlim([0 500]);
-    ylim([20 80]); % Set y-axis to range from 0 to 80
-    legend('show', 'Box', 'off'); % Show legend and remove the box around it
+    ylim([20 80]); 
+    legend('show', 'Box', 'off'); 
 end
 
 %%
@@ -87,7 +87,7 @@ clear;
 close all;
 
 % Define the base directory where the subject folders are located
-baseDir = pwd; % Assuming the current directory is the base directory
+baseDir = pwd; 
 
 % Define the subjects and fingers
 subjects = {'KH1', 'KH2', 'KH3', 'KH4', 'KH5', 'KH6', 'KH7', 'KH8', 'KH9', 'KH10'};
@@ -101,7 +101,7 @@ classfData = cell(1, numFingers);
 % Loop through subjects and fingers to load data
 for i = 1:numSubjects
     subject = subjects{i};
-    subjectDir = fullfile(baseDir, subject); % Directory for each subject
+    subjectDir = fullfile(baseDir, subject); 
     for j = 1:numFingers
         finger = fingers{j};
         filename = fullfile(subjectDir, sprintf('%s_classf_tact_vs_prop_%s.mat', subject, finger));
@@ -131,7 +131,7 @@ accuracyLength = length(classfData{1});
 time = linspace(0, 500, accuracyLength);
 
 % Plot styles for different fingers
-plotStyles = {'-ok', '-^k', '-sk', '-dk'}; % Circle, triangle, square, diamond, all in black
+plotStyles = {'-ok', '-^k', '-sk', '-dk'}; 
 
 % Plot the grand average classification accuracies
 figure;
@@ -141,15 +141,15 @@ for j = 1:numFingers
     plot(time, classfData{j}, plotStyles{j}, 'DisplayName', sprintf('%s', finger), 'LineWidth', 1.0, 'MarkerIndices', 2:length(time));
 end
 hold off;
-set(gca, 'Color', 'w'); % Set axes background color to white
-set(gca, 'XColor', 'k', 'YColor', 'k'); % Set tick colors to black
-set(gca, 'TickDir', 'out'); % Ticks pointing outwards
-set(gca, 'Box', 'off'); % Remove the upper and right edges
-set(gca, 'FontName', 'Times New Roman'); % Set font to Times New Roman
-set(gca, 'TickLength', [0.005 0.005]); % Set shorter tick lengths
+set(gca, 'Color', 'w'); 
+set(gca, 'XColor', 'k', 'YColor', 'k'); 
+set(gca, 'TickDir', 'out'); 
+set(gca, 'Box', 'off'); 
+set(gca, 'FontName', 'Times New Roman'); 
+set(gca, 'TickLength', [0.005 0.005]); 
 title('Proprioceptive vs. Tactile', 'Color', 'k');
 xlabel('Time (ms)', 'Color', 'k');
 ylabel('Accuracy (%)', 'Color', 'k');
 xlim([0 500]);
-ylim([20 100]); % Set y-axis to range from 0 to 80
-legend('show', 'Box', 'off'); % Show legend and remove the box around it
+ylim([20 100]); 
+legend('show', 'Box', 'off'); 
