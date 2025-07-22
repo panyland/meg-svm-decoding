@@ -1,5 +1,7 @@
 # Decoding sensory stimuli applied to fingers using MEG data and SVMs. 
-Includes code for processing MEG recordings (fully pre-processed), analyzing event-related responses, and classifying tactile/proprioceptive stimuli across fingers as well as plotting results.
+Includes code for processing MEG recordings (fully pre-processed), analyzing event-related responses, and classifying tactile/proprioceptive stimuli given across fingers as well as plotting results. 
+Check the full report from my website https://panyland.github.io/pofo-website/  
+ 
 
 ## svm.m
 Implements sliding-window SVM classification with permutation testing. Key features:
