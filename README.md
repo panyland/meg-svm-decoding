@@ -1,6 +1,6 @@
 # Decoding sensory stimuli applied to fingers using MEG data and SVMs. 
-Includes code for processing MEG recordings (fully pre-processed), analyzing event-related responses, and classifying tactile/proprioceptive stimuli given across fingers as well as plotting results. 
-Check the full report from my website https://panyland.github.io/pofo-website/  
+Includes code for analyzing fully pre-processed MEG recordings (OTP, tSSS, ICA), detecting event-related responses, classifying tactile and proprioceptive stimuli delivered across four fingers of the hand, and plotting the results.
+Check the full report on my website: https://panyland.github.io/pofo-website/portfolio
  
 
 ## svm.m
